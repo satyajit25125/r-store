@@ -21,6 +21,7 @@ import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Styled Button( made for multiple use)
 export const Button = styled.button`
@@ -81,6 +82,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} title="Home" />

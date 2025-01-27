@@ -48,11 +48,7 @@ export default function Footer() {
                   <FaInstagram className="icons" />
                 </div>
                 <div>
-                  <Link
-                    to="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link to="" target="_blank" rel="noopener noreferrer">
                     <FaYoutube className="icons" />
                   </Link>
                 </div>

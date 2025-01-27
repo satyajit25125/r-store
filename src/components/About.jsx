@@ -1,6 +1,13 @@
 import React from "react";
+import HeroSection from "./HeroSection";
 
 export default function About() {
-  // const { myName } = useProductContext();
-  return <div>About</div>;
+  const data = {
+    name: "R Ecommerce",
+  };
+  return (
+    <>
+      <HeroSection myData={data} />
+    </>
+  );
 }
