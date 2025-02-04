@@ -85,7 +85,7 @@ export default function Singleproduct() {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p> Delivered </p>
               </div>
 
               <div className="product-warranty-data">

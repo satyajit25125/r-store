@@ -24,16 +24,6 @@ const getLocalCartData = () => {
     }
   }
 };
-// const getLocalCartData = () => {
-//   let localCartData = localStorage.getItem("thapaCart");
-//   if (!localCartData) {
-//     return [];
-//   } else {
-//     // return JSON.parse(localCartData);
-//     initialState.cart.push(...localCartData);
-//   }
-// };
-// getLocalCartData();
 //
 const initialState = {
   // cart: [],
