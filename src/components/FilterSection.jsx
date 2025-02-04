@@ -64,71 +64,72 @@ export default function FilterSection() {
           </div>
         </div>
       }
+      <div className="cc">
+        {
+          <div className="filter-company">
+            <h3>Company</h3>
 
-      {
-        <div className="filter-company">
-          <h3>Company</h3>
+            <form>
+              <select
+                name="company"
+                id="company"
+                className="filter-company--select"
+                onClick={updateFilterValue}
+              >
+                {companyData.map((curElem, index) => {
+                  return (
+                    <option key={index} value={curElem} name="company">
+                      {curElem}
+                    </option>
+                  );
+                })}
+              </select>
+            </form>
+          </div>
+        }
 
-          <form>
-            <select
-              name="company"
-              id="company"
-              className="filter-company--select"
-              onClick={updateFilterValue}
-            >
-              {companyData.map((curElem, index) => {
-                return (
-                  <option key={index} value={curElem} name="company">
-                    {curElem}
-                  </option>
-                );
-              })}
-            </select>
-          </form>
-        </div>
-      }
+        {
+          <div className="filter-colors colors">
+            <h3>Colors</h3>
 
-      {
-        <div className="filter-colors colors">
-          <h3>Colors</h3>
-
-          <div className="filter-color-style">
-            {colorsData.map((curColor, index) => {
-              if (curColor === "all") {
+            <div className="filter-color-style">
+              {colorsData.map((curColor, index) => {
+                if (curColor === "all") {
+                  return (
+                    <button
+                      key={index}
+                      type="button"
+                      value={curColor}
+                      name="color"
+                      className="color-all--style"
+                      onClick={updateFilterValue}
+                    >
+                      all
+                    </button>
+                  );
+                }
                 return (
                   <button
                     key={index}
                     type="button"
                     value={curColor}
                     name="color"
-                    className="color-all--style"
+                    style={{ backgroundColor: curColor }}
+                    className={
+                      color === curColor ? "btnStyle active" : "btnStyle"
+                    }
                     onClick={updateFilterValue}
                   >
-                    all
+                    {color === curColor ? (
+                      <FaCheck className="checkStyle" />
+                    ) : null}
                   </button>
                 );
-              }
-              return (
-                <button
-                  key={index}
-                  type="button"
-                  value={curColor}
-                  name="color"
-                  style={{ backgroundColor: curColor }}
-                  className={
-                    color === curColor ? "btnStyle active" : "btnStyle"
-                  }
-                  onClick={updateFilterValue}
-                >
-                  {color === curColor ? (
-                    <FaCheck className="checkStyle" />
-                  ) : null}
-                </button>
-              );
-            })}
+              })}
+            </div>
           </div>
-        </div>
-      }
+        }
+      </div>
 
       {/* <div className="filter_price">
         <h3>Price</h3>
@@ -260,5 +261,42 @@ const Wrapper = styled.section`
   .filter-clear .btn {
     background-color: #ec7063;
     color: #000;
+  }
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .filter-category {
+      div {
+        display: flex;
+        flex-direction: row;
+        // align-items: flex-start;
+        justify-content: space-between;
+        gap: 1.4rem;
+
+        button {
+          border: none;
+          background-color: ${({ theme }) => theme.colors.white};
+          text-transform: capitalize;
+          cursor: pointer;
+
+          &:hover {
+            color: ${({ theme }) => theme.colors.btn};
+          }
+        }
+
+        .active {
+          border-bottom: 1px solid #000;
+          color: ${({ theme }) => theme.colors.btn};
+        }
+      }
+    }
+    .cc {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .filter-clear .btn {
+      background-color: #ec7063;
+      color: #000;
+      // align-content: center;
+    }
   }
 `;
